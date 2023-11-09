@@ -301,6 +301,50 @@
 <script>
 AOS.init();
 </script>
+<script>
+	function calculateShares() {
+		// Dein JavaScript-Code hier
+function calculateShares() {
+    // Benutzereingaben
+    let Menge = parseInt(prompt("Menge: "));
+    let Preis = parseFloat(prompt("Preis: "));
+
+    let PreisProEinheit = Preis / Menge;
+
+    let AnzahlPersonen = parseInt(prompt("Geben Sie die Anzahl der Personen an: "));
+
+    let Personen = [];
+    let PreisProPerson = [];
+
+    // Schleife für Benutzereingaben zu Personen und Preisen
+    for (let i = 0; i < AnzahlPersonen; i++) {
+        let name = prompt("Geben Sie den Namen ein: ");
+        Personen.push(name);
+
+        let preis = parseInt(prompt(`Geben Sie den Preis für ${name} ein: `));
+        PreisProPerson.push(preis);
+    }
+
+    // Ergebnisse ausgeben
+    console.clear();
+    console.log(`Ihre Angaben:\nMenge: ${Menge}\nPreis: ${Preis}\nAnzahl an Personen: ${AnzahlPersonen}\nGeld Pro Person\n`);
+    console.log(`Ergebnis:\n\nInsgesamte Menge: ${Menge} Einheiten\n`);
+
+    for (let i = 0; i < AnzahlPersonen; i++) {
+        console.log(`${Personen[i]} zahlt ${PreisProPerson[i]} Euro.`);
+        console.log(`${Personen[i]} bekommt ${Math.round(PreisProPerson[i] / PreisProEinheit, 3)} Einheiten.`);
+        console.log(`${Personen[i]} bekommt ${Math.round((PreisProPerson[i] / Preis) * 100, 3)}%.\n`);
+    }
+
+    console.log("");
+}
+
+// Aufrufen der Funktion
+calculateShares();
+
+		
+        }
+    </script>
 
 </body>
 </html>
